@@ -1,15 +1,15 @@
 package diverse;
 
-message edge {
-  required string id = 1;
-  required double weight = 2;
-}
-
 message node {
-  required string id = 1;
-  optional edge parent = 2;
-  repeated edge child = 3;
+  required int32 id = 1;
 } 
+
+message edge {
+  required int32 id = 1;
+  required double weight = 2;
+  repeated int32 childrenIds = 3;
+  optional int32 parentId = 4;
+}
 
 message hypergraph {
   repeated node nodes = 1;
