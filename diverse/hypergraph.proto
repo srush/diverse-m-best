@@ -1,17 +1,21 @@
-package diverse;
+package shortestPath;
 
-message node {
+option java_outer_classname = "HypergraphProto";
+
+message Vertex {
   required int32 id = 1;
+  required string name = 2;
 } 
 
-message edge {
+message Hyperedge {
   required int32 id = 1;
+  // Not the correct implementation of a weight function
   required double weight = 2;
   repeated int32 childrenIds = 3;
   optional int32 parentId = 4;
 }
 
-message hypergraph {
-  repeated node nodes = 1;
-  repeated edge edges = 2;
+message Hypergraph {
+  repeated Vertex vertices = 1;
+  repeated Hyperedge edges = 2;
 }
