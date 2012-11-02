@@ -1,0 +1,12 @@
+To run the tests from command line
+
+1. Change your classpath 
+
+export CLASSPATH=$JUNIT_HOME/junit<version>.jar:<this location>/hyp.jar:
+
+2. Run
+
+java org.junit.runner.JUnitCore basicViterbi.ViterbiTest
+
+NOTE: Your classpath must contain the jar for Google protocol buffers (included in the lib of hyp.jar)
+
